@@ -63,4 +63,8 @@ dependencies {
     // Paging Compose
     implementation "com.google.accompanist:accompanist-pager:0.13.0"
     implementation "com.google.accompanist:accompanist-pager-indicators:0.13.0"
+
+    //Icons
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
 }

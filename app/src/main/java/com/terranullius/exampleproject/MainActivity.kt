@@ -4,24 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.*
-import com.google.accompanist.pager.*
-import com.terranullius.exampleproject.presentation.top_bar.TabContentScreen
+import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.rememberPagerState
 import com.terranullius.exampleproject.presentation.top_bar.TabsContent
 import com.terranullius.exampleproject.presentation.top_bar.TopBar
 import com.terranullius.exampleproject.ui.theme.ExampleProjectTheme
-import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
 class MainActivity : ComponentActivity() {
@@ -39,7 +32,10 @@ class MainActivity : ComponentActivity() {
                         AnimatedVisibility(visible = pagerState.currentPage != 0) {
 
                             Column(modifier = Modifier.fillMaxWidth()) {
-                                TopBar(modifier = Modifier.fillMaxWidth(), pagerState = pagerState)
+                                TopBar(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    pagerState = pagerState
+                                )
                             }
                         }
                         TabsContent(pagerState = pagerState)

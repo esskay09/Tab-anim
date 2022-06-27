@@ -1,5 +1,6 @@
 package com.terranullius.exampleproject.presentation.top_bar
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,14 +27,16 @@ fun TabsContent(pagerState: PagerState) {
 @Composable
 fun TabContentScreen(data: String) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = data,
             style = MaterialTheme.typography.h5,
-            color = MaterialTheme.colors.secondary,
+            color = MaterialTheme.colors.primary,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center
         )
