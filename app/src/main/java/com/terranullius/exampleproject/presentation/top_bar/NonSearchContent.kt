@@ -1,5 +1,6 @@
 package com.terranullius.exampleproject.presentation.top_bar
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
@@ -26,13 +27,16 @@ fun NonSearchContent(
     pagerState: PagerState,
     onSearchClick: () -> Unit = {}
 ) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier
+    ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 6.dp)
+                .padding(horizontal = 17.dp, vertical = 8.dp)
+
         ) {
             Text(
                 text = "Sharma Store",
@@ -43,14 +47,14 @@ fun NonSearchContent(
                 color = MaterialTheme.colors.onPrimary
             )
 
-            Row() {
+            Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(
                     Icons.Outlined.Search,
                     contentDescription = "",
                     tint = MaterialTheme.colors.secondary,
                     modifier = Modifier.clickable {
                         onSearchClick()
-                    })
+                    }.padding(6.dp))
 
                 Spacer(modifier = Modifier.width(6.dp))
 

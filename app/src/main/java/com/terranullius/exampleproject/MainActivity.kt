@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.rememberPagerState
@@ -30,7 +31,6 @@ class MainActivity : ComponentActivity() {
                         val pagerState = rememberPagerState(pageCount = 4, initialPage = 1)
 
                         AnimatedVisibility(visible = pagerState.currentPage != 0) {
-
                             Column(modifier = Modifier.fillMaxWidth()) {
                                 TopBar(
                                     modifier = Modifier.fillMaxWidth(),

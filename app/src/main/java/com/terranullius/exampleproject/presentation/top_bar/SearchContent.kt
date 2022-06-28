@@ -25,9 +25,12 @@ fun SearchContent(modifier: Modifier, onBackClick: () -> Unit) {
                 Icons.Outlined.ArrowBack,
                 contentDescription = "",
                 tint = MaterialTheme.colors.primary,
-                modifier = Modifier.clickable {
-                    onBackClick()
-                })
+                modifier = Modifier
+                    .clickable {
+                        onBackClick()
+                    }
+                    .padding(8.dp)
+            )
             TextField(
                 modifier = Modifier.fillMaxWidth(),
                 value = searchValue,

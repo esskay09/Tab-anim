@@ -25,7 +25,7 @@ fun OptionsOverflowComposable(
 //                    onClick()
                     expanded = true
                 }
-                .padding(6.dp),
+                .padding(9.dp),
             tint = MaterialTheme.colors.secondary
         )
 
