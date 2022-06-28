@@ -15,14 +15,6 @@ import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.platform.debugInspectorInfo
 import kotlin.math.sqrt
 
-/**A modifier that clips the composable content using an animated circle. The circle will
- *  expand/shrink with an animation whenever [visible] changes.
- *
- *  For more fine-grained control over the transition, see this method's overload, which allows passing
- *  a [State] object to control the progress of the reveal animation.
- *
- *  By default, the circle is centered in the content, but custom positions may be specified using
- *  [revealFrom]. Specified offsets should be between 0 (left/top) and 1 (right/bottom).*/
 @SuppressLint("UnnecessaryComposedModifier")
 fun Modifier.circularReveal(
     visible: Boolean,
@@ -41,14 +33,7 @@ fun Modifier.circularReveal(
     }
 )
 
-/**A modifier that clips the composable content using a circular shape. The radius of the circle
- * will be determined by the [transitionProgress].
- *
- * The values of the progress should be between 0 and 1.
- *
- * By default, the circle is centered in the content, but custom positions may be specified using
- *  [revealFrom]. Specified offsets should be between 0 (left/top) and 1 (right/bottom).
- *  */
+
 fun Modifier.circularReveal(
     transitionProgress: State<Float>,
     revealFrom: Offset = Offset(0.5f, 0.5f)

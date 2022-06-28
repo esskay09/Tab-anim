@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
             ExampleProjectTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    color = MaterialTheme.colors.primary
                 ) {
                     Column(modifier = Modifier.fillMaxSize()) {
                         val pagerState = rememberPagerState(pageCount = 4, initialPage = 1)

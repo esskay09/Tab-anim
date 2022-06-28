@@ -46,7 +46,8 @@ fun SearchContent(modifier: Modifier, onBackClick: () -> Unit) {
 
         Text(
             text = "Placeholder data",
-            modifier = Modifier.padding(vertical = 25.dp, horizontal = 10.dp)
+            modifier = Modifier.padding(vertical = 25.dp, horizontal = 10.dp),
+            color = MaterialTheme.colors.onSecondary
         )
 
         Spacer(modifier = Modifier.height(10.dp))
