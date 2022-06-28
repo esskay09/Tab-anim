@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     Column(modifier = Modifier.fillMaxSize()) {
                         val pagerState = rememberPagerState(pageCount = 4, initialPage = 1)
 
-                        AnimatedVisibility(visible = pagerState.currentPage != 0) {
+                        AnimatedVisibility(visible = pagerState.targetPage != 0) {
                             Column(modifier = Modifier.fillMaxWidth()) {
                                 TopBar(
                                     modifier = Modifier.fillMaxWidth(),
