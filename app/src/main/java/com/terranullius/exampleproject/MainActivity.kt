@@ -1,6 +1,7 @@
 package com.terranullius.exampleproject
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
@@ -9,7 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.rememberPagerState
@@ -28,9 +29,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.primary
                 ) {
                     Column(modifier = Modifier.fillMaxSize()) {
-                        val pagerState = rememberPagerState(pageCount = 4, initialPage = 1)
-
-                        AnimatedVisibility(visible = pagerState.targetPage != 0) {
+                        val pagerState = rememberPagerState(initialPage = 1)
+                        AnimatedVisibility(visible = pagerState.currentPage != 0 || pagerState.targetPage != 0) {
                             Column(modifier = Modifier.fillMaxWidth()) {
                                 TopBar(
                                     modifier = Modifier.fillMaxWidth(),
@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
                                 )
                             }
                         }
-                        TabsContent(pagerState = pagerState)
+                        TabsContent(pagerState = pagerState, 4)
                     }
                 }
             }

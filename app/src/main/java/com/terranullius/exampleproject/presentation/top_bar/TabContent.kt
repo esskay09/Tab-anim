@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -18,8 +19,8 @@ import com.google.accompanist.pager.PagerState
 
 @ExperimentalPagerApi
 @Composable
-fun TabsContent(pagerState: PagerState) {
-    HorizontalPager(state = pagerState) { page ->
+fun TabsContent(pagerState: PagerState, count: Int) {
+    HorizontalPager(state = pagerState, count = count) { page ->
         TabContentScreen(data = "Welcome to Screen $page")
     }
 }
@@ -29,7 +30,7 @@ fun TabContentScreen(data: String) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background),
+            .background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
