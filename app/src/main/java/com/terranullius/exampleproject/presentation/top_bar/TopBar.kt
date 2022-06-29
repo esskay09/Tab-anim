@@ -42,7 +42,7 @@ fun TopBar(
         LaunchedEffect(key1 = isSearching){
             isNonSearchContentVisible = if (isSearching) false
             else {
-                delay(20L)
+                delay(150L)
                 true
             }
         }
