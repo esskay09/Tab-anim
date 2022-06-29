@@ -1,7 +1,6 @@
 package com.terranullius.exampleproject
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
@@ -10,13 +9,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.rememberPagerState
 import com.terranullius.exampleproject.presentation.top_bar.TabsContent
 import com.terranullius.exampleproject.presentation.top_bar.TopBar
-import com.terranullius.exampleproject.ui.theme.ExampleProjectTheme
+import com.terranullius.exampleproject.presentation.theme.ExampleProjectTheme
 
 @OptIn(ExperimentalPagerApi::class)
 class MainActivity : ComponentActivity() {

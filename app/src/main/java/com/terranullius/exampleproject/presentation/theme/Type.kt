@@ -1,4 +1,4 @@
-package com.terranullius.exampleproject.ui.theme
+package com.terranullius.exampleproject.presentation.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

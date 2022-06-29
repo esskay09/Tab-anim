@@ -15,15 +15,18 @@ import androidx.compose.ui.text.style.TextAlign
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
+import com.terranullius.exampleproject.presentation.main_list.MainList
 
 
 @ExperimentalPagerApi
 @Composable
 fun TabsContent(pagerState: PagerState, count: Int) {
     HorizontalPager(state = pagerState, count = count) { page ->
-        TabContentScreen(data = "Welcome to Screen $page")
+        if (page == 0) MainList(modifier = Modifier.fillMaxSize())
+        else TabContentScreen(data = "Welcome to Screen $page")
     }
 }
+
 
 @Composable
 fun TabContentScreen(data: String) {
