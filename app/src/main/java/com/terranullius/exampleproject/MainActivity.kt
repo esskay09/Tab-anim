@@ -9,12 +9,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.rememberPagerState
+import com.terranullius.exampleproject.presentation.theme.ExampleProjectTheme
 import com.terranullius.exampleproject.presentation.top_bar.TabsContent
 import com.terranullius.exampleproject.presentation.top_bar.TopBar
-import com.terranullius.exampleproject.presentation.theme.ExampleProjectTheme
 
 @OptIn(ExperimentalPagerApi::class)
 class MainActivity : ComponentActivity() {
@@ -28,7 +29,20 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Column(modifier = Modifier.fillMaxSize()) {
                         val pagerState = rememberPagerState(initialPage = 1)
-                        AnimatedVisibility(visible = pagerState.currentPage != 0 || pagerState.targetPage != 0) {
+
+                        var isTopBarVisible by remember {
+                            mutableStateOf(true)
+                        }
+                        LaunchedEffect(key1 = pagerState.currentPage, pagerState.targetPage) {
+
+                            isTopBarVisible = when {
+                                pagerState.currentPage == 0 -> false
+                                pagerState.targetPage == 0 -> false
+                                else -> true
+                            }
+                        }
+
+                        AnimatedVisibility(visible = isTopBarVisible) {
                             Column(modifier = Modifier.fillMaxWidth()) {
                                 TopBar(
                                     modifier = Modifier.fillMaxWidth(),
